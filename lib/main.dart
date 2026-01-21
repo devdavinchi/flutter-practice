@@ -88,22 +88,29 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          padding: EdgeInsets.all(50.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25.0),
-            color: Colors.brown,
-          ),
-          child: Container(
-            height: double.infinity,
-            width: double.infinity,
-            padding: EdgeInsets.all(50.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.0),
-              color: Colors.brown.shade200,
-            ),
-            child: Text('Hello', style: TextStyle(color: Colors.black)),
+          color: Colors.black26,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                height: 100.0,
+                width: 100.0,
+
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.brown,
+                ),
+              ),
+              Container(
+                width: 100.0,
+                height: 100.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.brown.shade200,
+                ),
+              ),
+            ],
           ),
         ),
       ),
