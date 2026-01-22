@@ -86,46 +86,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Container(
-          color: Colors.black26,
-
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                height: 100.0,
-                width: 100.0,
-
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.brown,
-                ),
-                child: Center(
-                  child: Text('1', style: TextStyle(color: Colors.black)),
-                ),
-              ),
-
-              Container(
-                width: 100.0,
-                height: 100.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.brown.shade200,
-                ),
-                child: Center(
-                  child: Text("2", style: TextStyle(color: Colors.black)),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      body: Image.asset(
+        'assets/images/fanny.jpg',
+        height: double.infinity,
+        fit: BoxFit.cover,
       ),
     );
   }
