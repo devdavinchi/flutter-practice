@@ -85,16 +85,20 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        leading: Icon(Icons.grade_outlined, color: Colors.amber),
       ),
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/images/fanny.jpg',
-            fit: BoxFit.cover,
-            height: 500.0,
-          ),
-          SizedBox(height: 500.0, child: Center(child: Text("Dev Rai"))),
-        ],
+      body: Container(
+        padding: EdgeInsets.all(40.0),
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/images/fanny.jpg',
+              fit: BoxFit.cover,
+              height: 500.0,
+            ),
+            SizedBox(height: 500.0, child: Center(child: Text("Dev Rai"))),
+          ],
+        ),
       ),
     );
   }
