@@ -96,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text('this is a title'),
               leading: Icon(Icons.import_contacts_sharp, color: Colors.white38),
               tileColor: Colors.brown,
+              onTap: () => print("clicked"),
             ),
           ],
         ),
