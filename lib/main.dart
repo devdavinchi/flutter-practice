@@ -91,12 +91,12 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: EdgeInsets.all(40.0),
         child: Stack(
           children: [
-            Image.asset(
-              'assets/images/fanny.jpg',
-              fit: BoxFit.cover,
-              height: 500.0,
+            SizedBox(height: 400.0, child: Center(child: Text("Dev Rai"))),
+            ListTile(
+              title: Text('this is a title'),
+              leading: Icon(Icons.import_contacts_sharp, color: Colors.white38),
+              tileColor: Colors.brown,
             ),
-            SizedBox(height: 500.0, child: Center(child: Text("Dev Rai"))),
           ],
         ),
       ),
