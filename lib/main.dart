@@ -87,19 +87,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         leading: Icon(Icons.grade_outlined, color: Colors.amber),
       ),
-      body: Container(
-        padding: EdgeInsets.all(40.0),
-        child: Stack(
-          children: [
-            SizedBox(height: 400.0, child: Center(child: Text("Dev Rai"))),
-            ListTile(
-              title: Text('this is a title'),
-              leading: Icon(Icons.import_contacts_sharp, color: Colors.white38),
-              tileColor: Colors.brown,
-              onTap: () => print("clicked"),
-            ),
-          ],
-        ),
+      body: Wrap(
+        children: [
+          Text('sfs'),
+          Text('sfs'),
+          Text('sfs'),
+          Text('sfsfsfsfsfsd'),
+          Text('sfs'),
+          Text('sfs'),
+          Text('sfs'),
+          Text('sfsfsfsfsfsd'),
+          Text('sfs'),
+          Text('sfs'),
+          Text('sfs'),
+          Text('sfsfsfsfsfsd'),
+          Text('sfs'),
+          Text('sfs'),
+          Text('sfs'),
+          Text('sfsfsfsfsfsd'),
+        ],
       ),
     );
   }
