@@ -21,7 +21,18 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: Scaffold(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Dev's App", style: TextStyle(color: Colors.black)),
+          centerTitle: false,
+          leading: Icon(Icons.login_sharp, color: Colors.black),
+          actions: [
+            Text("back", style: TextStyle(color: Colors.black)),
+            Icon(Icons.login_rounded, color: Colors.black),
+          ],
+          backgroundColor: Colors.grey,
+        ),
+      ),
     );
   }
 }
