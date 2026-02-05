@@ -32,6 +32,15 @@ class MyApp extends StatelessWidget {
           ],
           backgroundColor: Colors.grey,
         ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home_filled), label: "hear"),
+            NavigationDestination(
+              icon: Icon(Icons.person_2_outlined),
+              label: "person",
+            ),
+          ],
+        ),
       ),
     );
   }
