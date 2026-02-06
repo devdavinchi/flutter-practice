@@ -32,14 +32,36 @@ class MyApp extends StatelessWidget {
           ],
           backgroundColor: Colors.grey,
         ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(icon: Icon(Icons.home_filled), label: "hear"),
-            NavigationDestination(
-              icon: Icon(Icons.person_2_outlined),
-              label: "person",
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () {
+                print("button pressed ");
+              },
+            ),
+            SizedBox(height: 10.10),
+            FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () {
+                print("button pressed ");
+              },
             ),
           ],
+        ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home_filled), label: "home"),
+            NavigationDestination(
+              icon: Icon(Icons.person_2_rounded),
+              label: "profile",
+            ),
+          ],
+          onDestinationSelected: (int value) {
+            print(value);
+          },
+          selectedIndex: 1,
         ),
       ),
     );
