@@ -25,13 +25,23 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Dev's App", style: TextStyle(color: Colors.black)),
           centerTitle: false,
-          leading: Icon(Icons.login_sharp, color: Colors.black),
+
           actions: [
             Text("back", style: TextStyle(color: Colors.black)),
             Icon(Icons.login_rounded, color: Colors.black),
           ],
           backgroundColor: Colors.grey,
         ),
+        drawer: Drawer(
+          backgroundColor: Color(0xFFA9A9A9),
+          child: Column(
+            children: [
+              DrawerHeader(child: Text("head")),
+              ListTile(title: Text("mario")),
+            ],
+          ),
+        ),
+
         floatingActionButton: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -41,7 +51,7 @@ class MyApp extends StatelessWidget {
                 print("button pressed ");
               },
             ),
-            SizedBox(height: 10.10),
+            SizedBox(height: 20.10),
             FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () {
@@ -49,19 +59,6 @@ class MyApp extends StatelessWidget {
               },
             ),
           ],
-        ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(icon: Icon(Icons.home_filled), label: "home"),
-            NavigationDestination(
-              icon: Icon(Icons.person_2_rounded),
-              label: "profile",
-            ),
-          ],
-          onDestinationSelected: (int value) {
-            print(value);
-          },
-          selectedIndex: 1,
         ),
       ),
     );
