@@ -13,52 +13,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.purple,
-          brightness: Brightness.dark,
-        ),
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Dev's App", style: TextStyle(color: Colors.black)),
-          centerTitle: false,
-
-          actions: [
-            Text("back", style: TextStyle(color: Colors.black)),
-            Icon(Icons.login_rounded, color: Colors.black),
-          ],
-          backgroundColor: Colors.grey,
-        ),
-        drawer: Drawer(
-          backgroundColor: Color(0xFFA9A9A9),
-          child: Column(
-            children: [
-              DrawerHeader(child: Text("head")),
-              ListTile(title: Text("mario")),
-            ],
+    return SafeArea(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.purple,
+            brightness: Brightness.dark,
           ),
         ),
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text("Dev's App", style: TextStyle(color: Colors.black)),
+            centerTitle: false,
 
-        floatingActionButton: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(
-              child: Icon(Icons.add),
-              onPressed: () {
-                print("button pressed ");
-              },
+            actions: [
+              Text("back", style: TextStyle(color: Colors.black)),
+              Icon(Icons.login_rounded, color: Colors.black),
+            ],
+            backgroundColor: Colors.grey,
+          ),
+          drawer: Drawer(
+            backgroundColor: Color(0xFFA9A9A9),
+            child: Column(
+              children: [
+                // DrawerHeader(child: Text("head")),
+                ListTile(title: Text("mario")),
+              ],
             ),
-            SizedBox(height: 20.10),
-            FloatingActionButton(
-              child: Icon(Icons.add),
-              onPressed: () {
-                print("button pressed ");
-              },
-            ),
-          ],
+          ),
+          bottomNavigationBar: NavigationBar(
+            destinations: [
+              NavigationDestination(icon: Icon(Icons.home), label: "home"),
+              NavigationDestination(icon: Icon(Icons.people), label: "people"),
+            ],
+          ),
         ),
       ),
     );
