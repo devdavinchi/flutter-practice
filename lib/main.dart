@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.purple,
+            seedColor: Colors.blue,
             brightness: Brightness.dark,
           ),
         ),
@@ -32,6 +32,26 @@ class MyApp extends StatelessWidget {
               Icon(Icons.login_rounded, color: Colors.black),
             ],
             backgroundColor: Colors.grey,
+          ),
+          body: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(children: [Text("dev")]),
+                  SizedBox(width: 10.10),
+                  Column(children: [Text("namita")]),
+                ],
+              ),
+
+              Row(
+                children: [
+                  Column(children: [Text("dev")]),
+                  SizedBox(width: 10.10),
+                  Column(children: [Text("namita")]),
+                ],
+              ),
+            ],
           ),
           drawer: Drawer(
             backgroundColor: Color(0xFFA9A9A9),
