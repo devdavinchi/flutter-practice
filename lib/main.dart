@@ -66,13 +66,15 @@ class _HomePageState extends State<HomePage> {
                 ],
               )
             : Center(child: Text("namita")),
-        drawer: Drawer(
-          backgroundColor: Color(0xFFA9A9A9),
-          child: Column(
-            children: [
-              // DrawerHeader(child: Text("head")),
-              ListTile(title: Text("mario")),
-            ],
+        drawer: SafeArea(
+          child: Drawer(
+            backgroundColor: Color(0xFFA9A9A9),
+            child: Column(
+              children: [
+                // DrawerHeader(child: Text("head")),
+                ListTile(title: Text("mario")),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: NavigationBar(
