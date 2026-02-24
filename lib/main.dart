@@ -4,9 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
-//stateless
-//materialapp
-//scaffold
+String? title;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -24,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         home: Scaffold(
           appBar: AppBar(
-            title: Text("Dev's App", style: TextStyle(color: Colors.black)),
+            title: Text(title!, style: TextStyle(color: Colors.black)),
             centerTitle: false,
 
             actions: [
@@ -34,12 +32,13 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.grey,
           ),
           body: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(children: [Text("dev")]),
-                  SizedBox(width: 10.10),
+                  // SizedBox(width: 10.10),
                   Column(children: [Text("namita")]),
                 ],
               ),
