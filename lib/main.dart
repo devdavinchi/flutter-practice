@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int change = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -77,18 +77,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: "home"),
-            NavigationDestination(icon: Icon(Icons.people), label: "people"),
-          ],
-          onDestinationSelected: (int value) {
-            setState(() {
-              change = value;
-            });
-          },
-          selectedIndex: change,
-        ),
+        bottomNavigationBar:
       ),
     );
   }
