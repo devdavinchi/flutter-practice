@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'widget_tree.dart';
+
 void main() {
   runApp(const HomePage());
 }
-
-// stateful can refresh
-// stateless can't refresh
-// setState to refresh
 
 String title = "Dev's App";
 
@@ -18,8 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,54 +27,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(title, style: TextStyle(color: Colors.black)),
-          centerTitle: false,
-
-          actions: [
-            Text("back", style: TextStyle(color: Colors.black)),
-            Icon(Icons.login_rounded, color: Colors.black),
-          ],
-          backgroundColor: Colors.grey,
-        ),
-
-        body: change == 0
-            ? Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(children: [Text("dev")]),
-                      // SizedBox(width: 10.10),
-                      Column(children: [Text("namita")]),
-                    ],
-                  ),
-
-                  Row(
-                    children: [
-                      Column(children: [Text("dev")]),
-                      SizedBox(width: 10.10),
-                      Column(children: [Text("namita")]),
-                    ],
-                  ),
-                ],
-              )
-            : Center(child: Text("namita")),
-        drawer: SafeArea(
-          child: Drawer(
-            backgroundColor: Color(0xFFA9A9A9),
-            child: Column(
-              children: [
-                // DrawerHeader(child: Text("head")),
-                ListTile(title: Text("mario")),
-              ],
-            ),
-          ),
-        ),
-        bottomNavigationBar:
-      ),
+      home: WidgetTree(),
     );
   }
 }
