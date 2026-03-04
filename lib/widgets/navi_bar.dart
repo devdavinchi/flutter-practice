@@ -17,6 +17,7 @@ class _NaviBarState extends State<NaviBar> {
         NavigationDestination(icon: Icon(Icons.home), label: "home"),
         NavigationDestination(icon: Icon(Icons.people), label: "people"),
       ],
+
       onDestinationSelected: (int value) {
         setState(() {
           change = value;

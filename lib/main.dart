@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widget_tree.dart';
+import 'views/widget_tree.dart';
 
 void main() {
   runApp(const HomePage());

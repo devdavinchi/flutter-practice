@@ -1,6 +1,10 @@
+import 'package:first_flutter_app/views/pages/home_page.dart';
+import 'package:first_flutter_app/views/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/navi_bar.dart';
+import '../widgets/navi_bar.dart';
+
+List<Widget> pages = [HomePage(), ProfilePage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
@@ -18,6 +22,7 @@ class WidgetTree extends StatelessWidget {
         ],
         backgroundColor: Colors.grey,
       ),
+      body: pages.elementAt(1),
       bottomNavigationBar: NaviBar(),
     );
   }
