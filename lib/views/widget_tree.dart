@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/data/notifiers.dart';
 import 'package:first_flutter_app/views/pages/home_page.dart';
 import 'package:first_flutter_app/views/pages/profile_page.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,11 @@ class WidgetTree extends StatelessWidget {
         ],
         backgroundColor: Colors.grey,
       ),
-      body: pages.elementAt(1),
+      body: ValueListenableBuilder(
+        valueListenable: selectedPageNotifier,
+        builder: (context, selectedPage, child) =>
+            pages.elementAt(selectedPage),
+      ),
       bottomNavigationBar: NaviBar(),
     );
   }
