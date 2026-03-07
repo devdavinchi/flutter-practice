@@ -15,11 +15,19 @@ class WidgetTree extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Dev's App", style: TextStyle(color: Colors.black)),
+
         centerTitle: false,
 
         actions: [
-          Text("back", style: TextStyle(color: Colors.black)),
-          Icon(Icons.login_rounded, color: Colors.black),
+          IconButton(
+            onPressed: () => themeChanger.value = !themeChanger.value,
+            icon: ValueListenableBuilder(
+              valueListenable: themeChanger,
+              builder: (context, themeChan, child) {
+                return Icon(themeChan ? Icons.dark_mode : Icons.light_mode);
+              },
+            ),
+          ),
         ],
         backgroundColor: Colors.grey,
       ),
