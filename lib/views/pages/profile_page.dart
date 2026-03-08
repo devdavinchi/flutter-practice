@@ -1,10 +1,42 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
   @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  TextEditingController control = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Profile Page"));
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: Column(
+          children: [
+            TextField(
+              controller: control,
+              decoration: InputDecoration(
+                hintText: "Enter your text here ",
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue, width: 2),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.purple, width: 2),
+                ),
+              ),
+              onEditingComplete: () => setState(() {}),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(control.text),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
