@@ -69,8 +69,20 @@ class _ProfilePageState extends State<ProfilePage> {
                     }),
                   ),
                   SwitchListTile(
-                    activeThumbColor: Colors.red,
-                    inactiveThumbColor: Colors.purple,
+                    thumbColor: WidgetStateProperty.resolveWith<Color?>((
+                      Set<WidgetState> states,
+                    ) {
+                      if (states.contains(WidgetState.selected)) {
+                        return Colors.grey;
+                      }
+
+                      if (states.contains(WidgetState.pressed)) {
+                        return Colors.brown;
+                      }
+
+                      return Colors.yellow;
+                    }),
+
                     trackOutlineColor: WidgetStatePropertyAll(Colors.black),
 
                     title: Text("shubham "),
