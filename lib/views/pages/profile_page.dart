@@ -38,19 +38,27 @@ class _ProfilePageState extends State<ProfilePage> {
                   Checkbox(
                     tristate: true,
                     value: isChecked,
-                    onChanged: (bool? value) =>
-                        setState(() {
-                          isChecked = value;
-                        }),
+                    onChanged: (bool? value) => setState(() {
+                      isChecked = value;
+                    }),
                   ),
-                  Text(control.text),
+
                   CheckboxListTile(
+                    title: Text(control.text),
+                    subtitle: Column(
+                      children: [
+                        Text("this is the end"),
+                        Text(
+                          "this is the start",
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ],
+                    ),
                     tristate: true,
                     value: isChecked,
-                    onChanged: (bool? value) =>
-                        setState(() {
-                          isChecked = value;
-                        }),
+                    onChanged: (bool? value) => setState(() {
+                      isChecked = value;
+                    }),
                   ),
                 ],
               ),
