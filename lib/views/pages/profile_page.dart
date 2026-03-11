@@ -10,6 +10,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController control = TextEditingController();
   bool? isChecked = false;
+  bool isSwitch = false;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +59,24 @@ class _ProfilePageState extends State<ProfilePage> {
                     value: isChecked,
                     onChanged: (bool? value) => setState(() {
                       isChecked = value;
+                    }),
+                  ),
+
+                  Switch(
+                    value: isSwitch,
+                    onChanged: (bool value) => setState(() {
+                      isSwitch = value;
+                    }),
+                  ),
+                  SwitchListTile(
+                    activeThumbColor: Colors.red,
+                    inactiveThumbColor: Colors.purple,
+                    trackOutlineColor: WidgetStatePropertyAll(Colors.black),
+
+                    title: Text("shubham "),
+                    value: isSwitch,
+                    onChanged: (bool value) => setState(() {
+                      isSwitch = value;
                     }),
                   ),
                 ],
