@@ -11,6 +11,7 @@ class _ProfilePageState extends State<ProfilePage> {
   TextEditingController control = TextEditingController();
   bool? isChecked = false;
   bool isSwitch = false;
+  double slider = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +69,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       isSwitch = value;
                     }),
                   ),
-                  SwitchListTile(
+                  SwitchListTile.adaptive(
                     thumbColor: WidgetStateProperty.resolveWith<Color?>((
                       Set<WidgetState> states,
                     ) {
@@ -89,6 +90,16 @@ class _ProfilePageState extends State<ProfilePage> {
                     value: isSwitch,
                     onChanged: (bool value) => setState(() {
                       isSwitch = value;
+                    }),
+                  ),
+                  Slider(
+                    value: slider,
+                    max: 10,
+                    divisions: 10,
+                    activeColor: Colors.red,
+                    onChanged: (double value) => setState(() {
+                      slider = value;
+                      print(value);
                     }),
                   ),
                 ],
