@@ -12,6 +12,7 @@ class _ProfilePageState extends State<ProfilePage> {
   bool? isChecked = false;
   bool isSwitch = false;
   double slider = 0.0;
+  String? classID = "a1";
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,20 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Center(
           child: Column(
             children: [
+              DropdownButton(
+                value: classID,
+                items: [
+                  DropdownMenuItem(value: "a1", child: Text("Class 1")),
+                  DropdownMenuItem(value: "a2 ", child: Text("Class 2")),
+                  DropdownMenuItem(value: "a3", child: Text("Class 3w")),
+                ],
+                onChanged: (value) {
+                  setState(() {
+                    classID = value;
+                  });
+                },
+              ),
+
               TextField(
                 controller: control,
                 decoration: InputDecoration(
@@ -141,7 +156,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     FilledButton(onPressed: () {}, child: Text("Click")),
                     OutlinedButton(onPressed: () {}, child: Text("Click")),
                     CloseButton(),
-                    BackButton(),
+                    BackButton(onPressed: () {}),
                   ],
                 ),
               ),
