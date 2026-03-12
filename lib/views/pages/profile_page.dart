@@ -15,97 +15,100 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Center(
-        child: Column(
-          children: [
-            TextField(
-              controller: control,
-              decoration: InputDecoration(
-                hintText: "Enter your text here ",
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue, width: 2),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.purple, width: 2),
-                ),
-              ),
-              onEditingComplete: () => setState(() {}),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Checkbox(
-                    tristate: true,
-                    value: isChecked,
-                    onChanged: (bool? value) => setState(() {
-                      isChecked = value;
-                    }),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            children: [
+              TextField(
+                controller: control,
+                decoration: InputDecoration(
+                  hintText: "Enter your text here ",
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue, width: 2),
                   ),
-
-                  CheckboxListTile(
-                    title: Text(control.text),
-                    subtitle: Column(
-                      children: [
-                        Text("this is the end"),
-                        Text(
-                          "this is the start",
-                          style: TextStyle(color: Colors.red),
-                        ),
-                      ],
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.purple, width: 2),
+                  ),
+                ),
+                onEditingComplete: () => setState(() {}),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Checkbox(
+                      tristate: true,
+                      value: isChecked,
+                      onChanged: (bool? value) => setState(() {
+                        isChecked = value;
+                      }),
                     ),
-                    tristate: true,
-                    value: isChecked,
-                    onChanged: (bool? value) => setState(() {
-                      isChecked = value;
-                    }),
-                  ),
 
-                  Switch(
-                    value: isSwitch,
-                    onChanged: (bool value) => setState(() {
-                      isSwitch = value;
-                    }),
-                  ),
-                  SwitchListTile.adaptive(
-                    thumbColor: WidgetStateProperty.resolveWith<Color?>((
-                      Set<WidgetState> states,
-                    ) {
-                      if (states.contains(WidgetState.selected)) {
-                        return Colors.grey;
-                      }
+                    CheckboxListTile(
+                      title: Text(control.text),
+                      subtitle: Column(
+                        children: [
+                          Text("this is the end"),
+                          Text(
+                            "this is the start",
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ],
+                      ),
+                      tristate: true,
+                      value: isChecked,
+                      onChanged: (bool? value) => setState(() {
+                        isChecked = value;
+                      }),
+                    ),
 
-                      if (states.contains(WidgetState.pressed)) {
-                        return Colors.brown;
-                      }
+                    Switch(
+                      value: isSwitch,
+                      onChanged: (bool value) => setState(() {
+                        isSwitch = value;
+                      }),
+                    ),
+                    SwitchListTile.adaptive(
+                      thumbColor: WidgetStateProperty.resolveWith<Color?>((
+                        Set<WidgetState> states,
+                      ) {
+                        if (states.contains(WidgetState.selected)) {
+                          return Colors.grey;
+                        }
 
-                      return Colors.yellow;
-                    }),
+                        if (states.contains(WidgetState.pressed)) {
+                          return Colors.brown;
+                        }
 
-                    trackOutlineColor: WidgetStatePropertyAll(Colors.black),
+                        return Colors.yellow;
+                      }),
 
-                    title: Text("shubham "),
-                    value: isSwitch,
-                    onChanged: (bool value) => setState(() {
-                      isSwitch = value;
-                    }),
-                  ),
-                  Slider(
-                    value: slider,
-                    max: 10,
-                    divisions: 10,
-                    activeColor: Colors.red,
-                    onChanged: (double value) => setState(() {
-                      slider = value;
-                      print(value);
-                    }),
-                  ),
-                ],
+                      trackOutlineColor: WidgetStatePropertyAll(Colors.black),
+
+                      title: Text("shubham "),
+                      value: isSwitch,
+                      onChanged: (bool value) => setState(() {
+                        isSwitch = value;
+                      }),
+                    ),
+                    Slider(
+                      value: slider,
+                      max: 10,
+                      divisions: 10,
+                      activeColor: Colors.red,
+                      onChanged: (double value) => setState(() {
+                        slider = value;
+                        print(value);
+                      }),
+                    ),
+                    Image.asset('assets/images/fanny.jpg'),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
