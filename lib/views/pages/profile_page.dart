@@ -122,7 +122,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Container(
                         width: double.infinity,
                         height: 200,
-                        color: Colors.white38,
+                        // color: Colors.white38,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/fanny.jpg"),
+                            // fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                     ),
                   ],
