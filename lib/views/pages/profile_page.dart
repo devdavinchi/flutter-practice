@@ -103,7 +103,28 @@ class _ProfilePageState extends State<ProfilePage> {
                         print(value);
                       }),
                     ),
-                    Image.asset('assets/images/fanny.jpg'),
+                    GestureDetector(
+                      onTap: () {
+                        print("Image selected");
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 200,
+                        color: Colors.white38,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    InkWell(
+                      splashColor: Colors.red,
+                      onTap: () {
+                        print("Image selected");
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 200,
+                        color: Colors.white38,
+                      ),
+                    ),
                   ],
                 ),
               ),
