@@ -20,11 +20,11 @@ class _SettingPageState extends State<SettingPage> {
       appBar: AppBar(
         title: Text("Settings"),
         automaticallyImplyLeading: false,
-        leading: BackButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        // leading: BackButton(
+        //   onPressed: () {
+        //     Navigator.pop(context);
+        //   },
+        // ),
       ),
       body: SingleChildScrollView(
         child: Padding(
