@@ -16,7 +16,6 @@ class WidgetTree extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Dev's App", style: TextStyle(color: Colors.black)),
-
         centerTitle: false,
 
         actions: [
@@ -31,11 +30,11 @@ class WidgetTree extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SettingPage();
+                    return SettingPage(title: "Dev's Setting");
                   },
                 ),
               );
