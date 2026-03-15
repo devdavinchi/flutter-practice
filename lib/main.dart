@@ -1,7 +1,6 @@
 import 'package:first_flutter_app/data/notifiers.dart';
+import 'package:first_flutter_app/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
-
-import 'views/widget_tree.dart';
 
 void main() {
   runApp(const HomePage());
@@ -30,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 
-        home: WidgetTree(),
+        home: WelcomePage(),
       ),
     );
   }
