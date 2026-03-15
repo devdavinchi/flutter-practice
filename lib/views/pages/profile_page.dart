@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/main.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -10,6 +11,25 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("profile Page"));
+    return Padding(
+      padding: EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          FilledButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return HomePage();
+                  },
+                ),
+              );
+            },
+            child: Text("Logout"),
+          ),
+        ],
+      ),
+    );
   }
 }
