@@ -34,6 +34,18 @@ class _SettingPageState extends State<SettingPage> {
           child: Center(
             child: Column(
               children: [
+                ElevatedButton(
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("this is me mario"),
+                        behavior: SnackBarBehavior.floating,
+                        duration: Duration(seconds: 1),
+                      ),
+                    );
+                  },
+                  child: Text("open snackbar"),
+                ),
                 DropdownButton(
                   value: classID,
                   items: [
