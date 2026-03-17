@@ -9,11 +9,15 @@ class HeroWidget extends StatelessWidget {
       tag: "hero1",
       child: ClipRRect(
         borderRadius: BorderRadius.circular(100.0),
+        child: SizedBox(
+          width: 500.0,
+          height: 400.0,
 
-        child: Image.asset(
-          "assets/images/fanny.jpg",
-          color: Colors.purple,
-          colorBlendMode: BlendMode.softLight,
+          child: Image.asset(
+            "assets/images/fanny.jpg",
+            color: Colors.purple,
+            colorBlendMode: BlendMode.softLight,
+          ),
         ),
       ),
     );

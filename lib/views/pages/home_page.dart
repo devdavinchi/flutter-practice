@@ -6,6 +6,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HeroWidget();
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: HeroWidget(),
+    );
   }
 }
