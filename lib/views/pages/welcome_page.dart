@@ -17,7 +17,14 @@ class WelcomePage extends StatelessWidget {
 
           children: [
             HeroWidget(),
-            ElevatedButton(
+            FittedBox(
+              child: Text(
+                "Fanny",
+                style: TextStyle(fontWeight: FontWeight(400), fontSize: 100.0),
+              ),
+            ),
+            SizedBox(height: 20.0),
+            FilledButton(
               onPressed: () {
                 selectedPageNotifier.value = 0;
                 Navigator.pushReplacement(
@@ -29,7 +36,18 @@ class WelcomePage extends StatelessWidget {
                   ),
                 );
               },
+              child: Text("Get Started"),
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 50.0),
+              ),
+            ),
+            SizedBox(height: 20.0),
+            TextButton(
+              onPressed: () {},
               child: Text("Login"),
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 50.0),
+              ),
             ),
           ],
         ),
