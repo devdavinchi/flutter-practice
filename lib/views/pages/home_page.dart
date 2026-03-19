@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/data/constants.dart';
 import 'package:first_flutter_app/views/pages/hero_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,10 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text("This is me mario"), Text("Mario forever")],
+                  children: [
+                    Text("This is me mario", style: TextStylesSelect.BigStyle),
+                    Text("Mario forever", style: TextStylesSelect.SmallStyle),
+                  ],
                 ),
               ),
             ),
