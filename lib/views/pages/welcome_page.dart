@@ -1,5 +1,6 @@
 import 'package:first_flutter_app/data/notifiers.dart';
 import 'package:first_flutter_app/views/pages/hero_widget.dart';
+import 'package:first_flutter_app/views/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 import '../widget_tree.dart';
@@ -43,7 +44,16 @@ class WelcomePage extends StatelessWidget {
             ),
             SizedBox(height: 20.0),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginPage();
+                    },
+                  ),
+                );
+              },
               child: Text("Login"),
               style: TextButton.styleFrom(
                 minimumSize: Size(double.infinity, 50.0),
