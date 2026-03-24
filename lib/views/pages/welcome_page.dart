@@ -17,7 +17,7 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
-            HeroWidget(),
+            HeroWidget(title: "HeroWelcome"),
             FittedBox(
               child: Text(
                 "Fanny",
