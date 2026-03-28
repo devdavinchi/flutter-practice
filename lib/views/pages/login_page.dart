@@ -30,18 +30,29 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            HeroWidget(title: "HeroLogin"),
-            Text("i am the body"),
-            TextField(
-              controller: controller,
-              decoration: InputDecoration(border: OutlineInputBorder()),
-              onEditingComplete: () {
-                setState(() {});
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              HeroWidget(title: "HeroLogin"),
+
+              SizedBox(height: 20.0),
+              TextField(
+                controller: controller,
+                decoration: InputDecoration(border: OutlineInputBorder()),
+                onEditingComplete: () {
+                  setState(() {});
+                },
+              ),
+              SizedBox(height: 20.0),
+              TextField(
+                controller: controller,
+                decoration: InputDecoration(border: OutlineInputBorder()),
+                onEditingComplete: () {
+                  setState(() {});
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

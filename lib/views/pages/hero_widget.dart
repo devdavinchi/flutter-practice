@@ -13,9 +13,9 @@ class HeroWidget extends StatelessWidget {
         Hero(
           tag: "hero1",
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(100.0),
+            borderRadius: BorderRadius.circular(50.0),
             child: SizedBox(
-              width: 500.0,
+              width: 600.0,
               height: 400.0,
 
               child: Image.asset(

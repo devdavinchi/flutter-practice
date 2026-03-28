@@ -13,54 +13,59 @@ class WelcomePage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
 
-          children: [
-            HeroWidget(title: "HeroWelcome"),
-            FittedBox(
-              child: Text(
-                "Fanny",
-                style: TextStyle(fontWeight: FontWeight(400), fontSize: 100.0),
-              ),
-            ),
-            SizedBox(height: 20.0),
-            FilledButton(
-              onPressed: () {
-                selectedPageNotifier.value = 0;
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WidgetTree();
-                    },
+            children: [
+              HeroWidget(title: "HeroWelcome"),
+              FittedBox(
+                child: Text(
+                  "Fanny",
+                  style: TextStyle(
+                    fontWeight: FontWeight(400),
+                    fontSize: 100.0,
                   ),
-                );
-              },
-              child: Text("Get Started"),
-              style: FilledButton.styleFrom(
-                minimumSize: Size(double.infinity, 50.0),
+                ),
               ),
-            ),
-            SizedBox(height: 20.0),
-            TextButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return LoginPage();
-                    },
-                  ),
-                );
-              },
-              child: Text("Login"),
-              style: TextButton.styleFrom(
-                minimumSize: Size(double.infinity, 50.0),
-                //comment
+              SizedBox(height: 20.0),
+              FilledButton(
+                onPressed: () {
+                  selectedPageNotifier.value = 0;
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return WidgetTree();
+                      },
+                    ),
+                  );
+                },
+                child: Text("Get Started"),
+                style: FilledButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50.0),
+                ),
               ),
-            ),
-          ],
+              SizedBox(height: 20.0),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LoginPage();
+                      },
+                    ),
+                  );
+                },
+                child: Text("Login"),
+                style: TextButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50.0),
+                  //comment
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
