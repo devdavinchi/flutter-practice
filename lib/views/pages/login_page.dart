@@ -2,6 +2,7 @@ import 'package:first_flutter_app/views/pages/hero_widget.dart';
 import 'package:flutter/material.dart';
 
 TextEditingController controller = TextEditingController();
+TextEditingController passwordControl = TextEditingController();
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -45,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 20.0),
               TextField(
-                controller: controller,
+                controller: passwordControl,
                 decoration: InputDecoration(border: OutlineInputBorder()),
                 onEditingComplete: () {
                   setState(() {});
