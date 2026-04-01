@@ -43,6 +43,8 @@ class _LoginPageState extends State<LoginPage> {
                 onEditingComplete: () {
                   setState(() {});
                 },
+
+                //commit
               ),
               SizedBox(height: 20.0),
               TextField(
