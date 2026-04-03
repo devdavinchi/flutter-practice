@@ -39,7 +39,10 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 20.0),
               TextField(
                 controller: controller,
-                decoration: InputDecoration(border: OutlineInputBorder()),
+                decoration: InputDecoration(
+                  hintText: "Email here...",
+                  border: OutlineInputBorder(),
+                ),
                 onEditingComplete: () {
                   setState(() {});
                 },
@@ -49,7 +52,10 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 20.0),
               TextField(
                 controller: passwordControl,
-                decoration: InputDecoration(border: OutlineInputBorder()),
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Password",
+                ),
                 onEditingComplete: () {
                   setState(() {});
                 },
