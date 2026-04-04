@@ -1,9 +1,7 @@
+import 'package:first_flutter_app/views/pages/dummy_page.dart';
 import 'package:first_flutter_app/views/pages/hero_widget.dart';
 import 'package:first_flutter_app/views/widget_tree.dart';
 import 'package:flutter/material.dart';
-
-TextEditingController controllerEmail = TextEditingController();
-TextEditingController passwordControl = TextEditingController();
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -13,9 +11,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController controllerEmail = TextEditingController();
+  TextEditingController passwordControl = TextEditingController();
+
+  String confirmEmail = "devrai430@gmail.com";
+  String confirmPassword = "123";
+
   @override
   void initState() {
-    print("initState");
     super.initState();
   }
 
@@ -69,14 +72,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 20.0),
               FilledButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return WidgetTree();
-                      },
-                    ),
-                  );
+                  emailPassConfirm();
                 },
                 style: FilledButton.styleFrom(
                   minimumSize: Size(double.infinity, 50.0),
@@ -92,5 +88,28 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  dynamic emailPassConfirm() {
+    if (confirmEmail == controllerEmail.text &&
+        confirmPassword == passwordControl.text) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return WidgetTree();
+          },
+        ),
+      );
+    } else {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return DummyPage();
+          },
+        ),
+      );
+    }
   }
 }
