@@ -3,8 +3,6 @@ import 'package:first_flutter_app/views/pages/hero_widget.dart';
 import 'package:first_flutter_app/views/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
-import '../widget_tree.dart';
-
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -32,11 +30,11 @@ class WelcomePage extends StatelessWidget {
               FilledButton(
                 onPressed: () {
                   selectedPageNotifier.value = 0;
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return WidgetTree();
+                        return LoginPage();
                       },
                     ),
                   );
@@ -49,7 +47,7 @@ class WelcomePage extends StatelessWidget {
               SizedBox(height: 20.0),
               TextButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {

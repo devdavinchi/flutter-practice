@@ -1,7 +1,8 @@
 import 'package:first_flutter_app/views/pages/hero_widget.dart';
+import 'package:first_flutter_app/views/widget_tree.dart';
 import 'package:flutter/material.dart';
 
-TextEditingController controller = TextEditingController();
+TextEditingController controllerEmail = TextEditingController();
 TextEditingController passwordControl = TextEditingController();
 
 class LoginPage extends StatefulWidget {
@@ -21,7 +22,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void dispose() {
     //disposing
-    controller.dispose();
+    controllerEmail.dispose();
+    passwordControl.dispose();
     super.dispose();
   }
 
@@ -38,10 +40,12 @@ class _LoginPageState extends State<LoginPage> {
 
               SizedBox(height: 20.0),
               TextField(
-                controller: controller,
+                controller: controllerEmail,
                 decoration: InputDecoration(
                   hintText: "Email here...",
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(22.0),
+                  ),
                 ),
                 onEditingComplete: () {
                   setState(() {});
@@ -53,12 +57,35 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 controller: passwordControl,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(22.0),
+                  ),
                   hintText: "Password",
                 ),
                 onEditingComplete: () {
                   setState(() {});
                 },
+              ),
+              SizedBox(height: 20.0),
+              FilledButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return WidgetTree();
+                      },
+                    ),
+                  );
+                },
+                style: FilledButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50.0),
+                  backgroundColor: Colors.cyanAccent,
+                  foregroundColor: Colors.black87,
+                  textStyle: TextStyle(fontSize: 20.0),
+                ),
+
+                child: Text("Login"),
               ),
             ],
           ),
