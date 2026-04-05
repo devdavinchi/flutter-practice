@@ -14,7 +14,7 @@ class DummyPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: FittedBox(
-                child: Text("I am  dummb", style: TextStyle(fontSize: 100)),
+                child: Text("I am  dumb", style: TextStyle(fontSize: 100)),
               ),
             ),
           ],
