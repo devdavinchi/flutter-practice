@@ -4,7 +4,9 @@ import 'package:first_flutter_app/views/widget_tree.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({super.key, required this.title});
+
+  final String title;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -36,54 +38,56 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              HeroWidget(title: "HeroLogin"),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                HeroWidget(title: widget.title),
 
-              SizedBox(height: 20.0),
-              TextField(
-                controller: controllerEmail,
-                decoration: InputDecoration(
-                  hintText: "Email here...",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(22.0),
+                SizedBox(height: 20.0),
+                TextField(
+                  controller: controllerEmail,
+                  decoration: InputDecoration(
+                    hintText: "Email here...",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(22.0),
+                    ),
                   ),
-                ),
-                onEditingComplete: () {
-                  setState(() {});
-                },
+                  onEditingComplete: () {
+                    setState(() {});
+                  },
 
-                //commit
-              ),
-              SizedBox(height: 20.0),
-              TextField(
-                controller: passwordControl,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(22.0),
+                  //commit
+                ),
+                SizedBox(height: 20.0),
+                TextField(
+                  controller: passwordControl,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(22.0),
+                    ),
+                    hintText: "Password",
                   ),
-                  hintText: "Password",
+                  onEditingComplete: () {
+                    setState(() {});
+                  },
                 ),
-                onEditingComplete: () {
-                  setState(() {});
-                },
-              ),
-              SizedBox(height: 20.0),
-              FilledButton(
-                onPressed: () {
-                  emailPassConfirm();
-                },
-                style: FilledButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50.0),
-                  backgroundColor: Colors.cyanAccent,
-                  foregroundColor: Colors.black87,
-                  textStyle: TextStyle(fontSize: 20.0),
-                ),
+                SizedBox(height: 20.0),
+                FilledButton(
+                  onPressed: () {
+                    emailPassConfirm();
+                  },
+                  style: FilledButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50.0),
+                    backgroundColor: Colors.cyanAccent,
+                    foregroundColor: Colors.black87,
+                    textStyle: TextStyle(fontSize: 20.0),
+                  ),
 
-                child: Text("Login"),
-              ),
-            ],
+                  child: Text("Login"),
+                ),
+              ],
+            ),
           ),
         ),
       ),
