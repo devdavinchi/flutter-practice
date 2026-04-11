@@ -28,7 +28,7 @@ class HeroWidget extends StatelessWidget {
         ),
         FittedBox(
           child: Text(
-            "I am hero",
+            "hero text",
             style: TextStyle(
               fontSize: 50.0,
               color: Colors.white,
