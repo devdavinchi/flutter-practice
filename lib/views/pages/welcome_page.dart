@@ -1,5 +1,4 @@
 import 'package:first_flutter_app/data/notifiers.dart';
-import 'package:first_flutter_app/main.dart';
 import 'package:first_flutter_app/views/pages/hero_widget.dart';
 import 'package:first_flutter_app/views/pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,7 @@ class WelcomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
 
               children: [
-                HeroWidget(title: title),
+                HeroWidget(title: "Welcome"),
                 FittedBox(
                   child: Text(
                     "Fanny",

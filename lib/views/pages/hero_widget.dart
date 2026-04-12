@@ -11,7 +11,7 @@ class HeroWidget extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         Hero(
-          tag: "hero1",
+          tag: title,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(50.0),
             child: SizedBox(
@@ -28,7 +28,7 @@ class HeroWidget extends StatelessWidget {
         ),
         FittedBox(
           child: Text(
-            "hero text",
+            title,
             style: TextStyle(
               fontSize: 50.0,
               color: Colors.white,
