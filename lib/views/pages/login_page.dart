@@ -97,13 +97,14 @@ class _LoginPageState extends State<LoginPage> {
   dynamic emailPassConfirm() {
     if (confirmEmail == controllerEmail.text &&
         confirmPassword == passwordControl.text) {
-      Navigator.pushReplacement(
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) {
             return WidgetTree();
           },
         ),
+        (route) => false,
       );
     } else {
       Navigator.pushReplacement(
