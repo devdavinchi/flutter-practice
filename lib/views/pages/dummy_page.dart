@@ -12,9 +12,9 @@ class DummyPage extends StatelessWidget {
           children: [
             SizedBox(height: 100),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(10.0),
               child: FittedBox(
-                child: Text("I amm  dumb", style: TextStyle(fontSize: 100)),
+                child: Text("I am  dumb", style: TextStyle(fontSize: 100)),
               ),
             ),
           ],
