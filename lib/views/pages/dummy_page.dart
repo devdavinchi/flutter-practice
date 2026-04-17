@@ -6,7 +6,7 @@ class DummyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Dummy Page"), backgroundColor: Colors.red),
+      appBar: AppBar(title: Text("Dummy Page")),
       body: Center(
         child: Column(
           children: [
