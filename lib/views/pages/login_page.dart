@@ -16,8 +16,8 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController passwordControl = TextEditingController();
 
-  String confirmEmail = "devrai430@gmail.com";
-  String confirmPassword = "123";
+  String confirmEmail = "dev";
+  String confirmPassword = "1234";
 
   @override
   void initState() {
