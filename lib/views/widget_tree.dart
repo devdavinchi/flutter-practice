@@ -3,7 +3,9 @@ import 'package:first_flutter_app/views/pages/home_page.dart';
 import 'package:first_flutter_app/views/pages/profile_page.dart';
 import 'package:first_flutter_app/views/pages/setting_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../data/constants.dart';
 import '../widgets/navi_bar.dart';
 
 List<Widget> pages = [HomePage(), ProfilePage()];
@@ -20,7 +22,13 @@ class WidgetTree extends StatelessWidget {
 
         actions: [
           IconButton(
-            onPressed: () => themeChanger.value = !themeChanger.value,
+            onPressed: () async {
+              themeChanger.value = !themeChanger.value;
+              final SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+              await prefs.setBool(KConstants.isDarkKey, true);
+            },
+
             icon: ValueListenableBuilder(
               valueListenable: themeChanger,
               builder: (context, themeChan, child) {

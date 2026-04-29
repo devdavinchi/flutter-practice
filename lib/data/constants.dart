@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+class KConstants {
+  static const String isDarkKey = 'isDarkKey';
+}
+
 class TextStylesSelect {
   static const TextStyle BigStyle = TextStyle(
     color: Colors.purple,
