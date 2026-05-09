@@ -26,7 +26,7 @@ class WidgetTree extends StatelessWidget {
               themeChanger.value = !themeChanger.value;
               final SharedPreferences prefs =
                   await SharedPreferences.getInstance();
-              await prefs.setBool(KConstants.isDarkKey, true);
+              await prefs.setBool(KConstants.isDarkKey, themeChanger.value);
             },
 
             icon: ValueListenableBuilder(
