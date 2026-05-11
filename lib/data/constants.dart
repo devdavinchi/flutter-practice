@@ -18,3 +18,9 @@ class TextStylesSelect {
     fontWeight: FontWeight.bold,
   );
 }
+
+class KValue {
+  static const String HeroTitle = "this is hero";
+  static const String notHero = "not Hero";
+  static const String HeroWannaBe = "wannaBeHero";
+}
