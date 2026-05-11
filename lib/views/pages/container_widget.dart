@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 import '../../data/constants.dart';
 
 class ContainerWidget extends StatelessWidget {
-  const ContainerWidget({super.key});
+  const ContainerWidget({
+    super.key,
+    required this.title,
+    required this.description,
+  });
+
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +25,8 @@ class ContainerWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("This is me mario", style: TextStylesSelect.BigStyle),
-                Text("Mario forever", style: TextStylesSelect.SmallStyle),
+                Text(title, style: TextStylesSelect.BigStyle),
+                Text(description, style: TextStylesSelect.SmallStyle),
               ],
             ),
           ),
