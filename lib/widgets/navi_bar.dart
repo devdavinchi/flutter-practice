@@ -11,7 +11,7 @@ class NaviBar extends StatelessWidget {
       builder: (context, selectedPage, child) => NavigationBar(
         destinations: [
           NavigationDestination(icon: Icon(Icons.home), label: "home"),
-          NavigationDestination(icon: Icon(Icons.people), label: "people"),
+          NavigationDestination(icon: Icon(Icons.people), label: "profile"),
         ],
 
         onDestinationSelected: (int value) {
