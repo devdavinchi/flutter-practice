@@ -34,62 +34,67 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    double widthScr = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Center(
           child: SingleChildScrollView(
-            child: FractionallySizedBox(
-              widthFactor: 0.1,
-              child: Column(
-                children: [
-                  HeroWidget(title: widget.title),
-                  //only for repo
-                  SizedBox(height: 20.0),
-                  TextField(
-                    controller: controllerEmail,
-                    decoration: InputDecoration(
-                      hintText: "Email",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(22.0),
-                      ),
-                    ),
-                    onEditingComplete: () {
-                      setState(() {});
-                    },
+            child: LayoutBuilder(
+              builder: (context, BoxConstraints constraints) {
+                return FractionallySizedBox(
+                  widthFactor: widthScr > 500 ? 0.5 : 1.0,
+                  child: Column(
+                    children: [
+                      HeroWidget(title: widget.title),
+                      //only for repo
+                      SizedBox(height: 20.0),
+                      TextField(
+                        controller: controllerEmail,
+                        decoration: InputDecoration(
+                          hintText: "Email",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(22.0),
+                          ),
+                        ),
+                        onEditingComplete: () {
+                          setState(() {});
+                        },
 
-                    //commit
-                  ),
-                  SizedBox(height: 20.0),
-                  TextField(
-                    controller: passwordControl,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(22.0),
+                        //commit
                       ),
-                      hintText: "Password",
-                    ),
-                    onEditingComplete: () {
-                      setState(() {});
-                    },
-                  ),
-                  SizedBox(height: 20.0),
-                  FilledButton(
-                    onPressed: () {
-                      emailPassConfirm();
-                    },
-                    style: FilledButton.styleFrom(
-                      minimumSize: Size(double.infinity, 50.0),
-                      backgroundColor: Colors.cyanAccent,
-                      foregroundColor: Colors.black87,
-                      textStyle: TextStyle(fontSize: 20.0),
-                    ),
+                      SizedBox(height: 20.0),
+                      TextField(
+                        controller: passwordControl,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(22.0),
+                          ),
+                          hintText: "Password",
+                        ),
+                        onEditingComplete: () {
+                          setState(() {});
+                        },
+                      ),
+                      SizedBox(height: 20.0),
+                      FilledButton(
+                        onPressed: () {
+                          emailPassConfirm();
+                        },
+                        style: FilledButton.styleFrom(
+                          minimumSize: Size(double.infinity, 50.0),
+                          backgroundColor: Colors.cyanAccent,
+                          foregroundColor: Colors.black87,
+                          textStyle: TextStyle(fontSize: 20.0),
+                        ),
 
-                    child: Text("Login"),
+                        child: Text("Login"),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                );
+              },
             ),
           ),
         ),

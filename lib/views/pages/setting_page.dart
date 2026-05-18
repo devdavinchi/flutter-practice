@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/views/pages/extended_flexible_page.dart';
 import 'package:flutter/material.dart';
 
 class SettingPage extends StatefulWidget {
@@ -169,6 +170,19 @@ class _SettingPageState extends State<SettingPage> {
                           slider = value;
                           print(value);
                         }),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return ExtendedFlexiblePage();
+                              },
+                            ),
+                          );
+                        },
+                        child: Text("Extended Page"),
                       ),
                       GestureDetector(
                         onTap: () {
