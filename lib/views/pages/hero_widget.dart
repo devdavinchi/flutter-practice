@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/views/pages/course_page.dart';
 import 'package:flutter/material.dart';
 
 class HeroWidget extends StatelessWidget {
@@ -10,21 +11,30 @@ class HeroWidget extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        Hero(
-          tag: title,
-          child: AspectRatio(
-            aspectRatio: 1920 / 1080,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(50.0),
-              child: SizedBox(
-                width: 600.0,
-                height: 400.0,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CoursePage()),
+            );
+          },
 
-                child: Image.asset(
-                  "assets/images/fanny.jpg",
-                  fit: BoxFit.cover,
-                  color: Colors.purple,
-                  colorBlendMode: BlendMode.softLight,
+          child: Hero(
+            tag: title,
+            child: AspectRatio(
+              aspectRatio: 1920 / 1080,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50.0),
+                child: SizedBox(
+                  width: 600.0,
+                  height: 400.0,
+
+                  child: Image.asset(
+                    "assets/images/fanny.jpg",
+                    fit: BoxFit.cover,
+                    color: Colors.purple,
+                    colorBlendMode: BlendMode.softLight,
+                  ),
                 ),
               ),
             ),
