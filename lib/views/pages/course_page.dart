@@ -37,3 +37,5 @@ class _CoursePageState extends State<CoursePage> {
     return const Placeholder();
   }
 }
+
+//thanks flutterMapp
